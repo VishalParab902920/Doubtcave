@@ -51,12 +51,15 @@
                 }
                 else
                 {
-                    $receiver_id = 201901;
+                    $receiver_id = 2019450002;
                 }
                 
             
             	$link  = mysqli_connect('localhost','root','','id11382069_doubtcave')or die('Error connecting to MySQL server.');
-            	$query="SELECT * FROM student WHERE id IN(SELECT DISTINCT sendersID from chats where length(sendersID)=10)";
+            	$query="SELECT * FROM student WHERE id IN(SELECT DISTINCT sendersID from chats where length(sendersID)=10 
+              and receiversID=$user_id
+              and isSolved=0)";
+
             	$res  = mysqli_query($link,$query)or die('Error querying database.');
                 if(mysqli_num_rows($res) > 0)
 	            {
@@ -91,10 +94,11 @@
                 ?>
                 <img class="profile-image" src="<?php echo $row["photo"] ?>" alt="">
                 <div class="text">
-                  <h6><?php echo $row["name"] ?></h6>
                 </div>
                 <span class="settings-tray--right">
-
+                <a href="setDoubtSolved.php?receiverID=<?php echo $receiver_id;?>">
+                <input type="button" value="Solved">
+                </a>
                 </span>
               </div>
             </div>
@@ -126,6 +130,8 @@
                       if(mysqli_query($link, $sql))
                       {
                         echo "Records inserted successfully.";
+                        $msg='';
+
                       } else{
                         echo "ERROR: Could not able to execute $sql. " . mysqli_error($link);
                       }
@@ -176,7 +182,7 @@
                     var myVar;
                     function myFunction() {
 
-                      myVar = setInterval(alertFunc, 3000);
+                      myVar = setInterval(alertFunc, 2000);
                     }
                     
                     myFunction();

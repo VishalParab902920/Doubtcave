@@ -93,7 +93,9 @@
                   <h6><?php echo $row["name"] ?></h6>
                 </div>
                 <span class="settings-tray--right">
-
+                <a href="setDoubtSolved.php?receiverID=<?php echo $receiver_id;?>">
+                <input type="button" value="Solved">
+                </a>                
                 </span>
               </div>
             </div>
@@ -125,6 +127,15 @@
                       if(mysqli_query($link, $sql))
                       {
                         echo "Records inserted successfully.";
+
+                        $query="UPDATE chats 
+                        SET isSolved=0 
+                        where sendersID='$user_id' and receiversID='$receiver_id' 
+                        or 
+                        sendersID='$receiver_id' and receiversID='$user_id'";
+                        $res  = mysqli_query($link,$query)or die('Error querying database.');
+
+
                       } else{
                         echo "ERROR: Could not able to execute $sql. " . mysqli_error($link);
                       }
@@ -156,7 +167,7 @@
 
                     var myVar;
                     function myFunction() {
-                      myVar = setInterval(alertFunc, 3000);
+                      myVar = setInterval(alertFunc, 2500);
                     }
                     function alertFunc() {
                       var r_id="<?php echo $receiver_id?>";
