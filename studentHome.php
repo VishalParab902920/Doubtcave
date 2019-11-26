@@ -55,7 +55,7 @@
                 }
                 
             
-            	$link  = mysqli_connect('localhost','root','','id11382069_doubtcave')or die('Error connecting to MySQL server.');
+            	$link  = mysqli_connect('localhost','root','','doubtcave')or die('Error connecting to MySQL server.');
             	$query="Select * from faculty";
             	$res  = mysqli_query($link,$query)or die('Error querying database.');
                 if(mysqli_num_rows($res) > 0)

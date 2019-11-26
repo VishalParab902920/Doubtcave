@@ -55,7 +55,7 @@
                 }
                 
             
-            	$link  = mysqli_connect('localhost','root','','id11382069_doubtcave')or die('Error connecting to MySQL server.');
+            	$link  = mysqli_connect('localhost','root','','doubtcave')or die('Error connecting to MySQL server.');
             	$query="SELECT * FROM student WHERE id IN(SELECT DISTINCT sendersID from chats where length(sendersID)=10 
               and receiversID=$user_id
               and isSolved=0)";
@@ -84,7 +84,8 @@
             ?>
           </div>
           <div class="col-md-10">
-            <div class="settings-tray">
+            <div class=" settings-tray">
+            <div class="col-sm-4">
                 <div class="friend-drawer no-gutters friend-drawer--grey">
                 <?php
                 $query="Select * from faculty where id=$receiver_id";
@@ -95,11 +96,16 @@
                 <img class="profile-image" src="<?php echo $row["photo"] ?>" alt="">
                 <div class="text">
                 </div>
-                <span class="settings-tray--right">
+                </div>
+                
+                
+                <div class="col-sm-4" >
                 <a href="setDoubtSolved.php?receiverID=<?php echo $receiver_id;?>">
-                <input type="button" value="Solved">
+                <input type="button" class="btn btn-primary" value="Done">
                 </a>
-                </span>
+                </div>
+                
+                
               </div>
             </div>
             <!-- Chat  Panel -->
@@ -109,12 +115,16 @@
 
                 </div>
              </div>
-         
-              <div class="row">
+            </div>
+             
+             
+             
+              
+              <div class="row ">
                 <div class="col-12">
                   <div class="chat-box-tray">
                    <form action="" method="POST">
-                   <input type="text" name="message" placeholder="Type your message here...">
+                   <input type="text" name="message" class="form-control" placeholder="Type your message here..."><br>
                    <button name="submit">
                       <i class="material-icons">send</i>
                    </button>
@@ -191,10 +201,12 @@
                  </div>
                 </div>
               </div>
-            </div>
+              
+            
           </div>
         </div>
       </div>
+      
       </body>
       
       </html>

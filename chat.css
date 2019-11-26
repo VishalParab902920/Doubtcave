@@ -1,14 +1,7 @@
-body {
-    background-color: #48dbfb;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    text-rendering: optimizeLegibility;
-}
+
 .container-fluid {
     
     background: #fff;
-    padding: 0;
-    border-radius: 7px;
     width:100%;
     height: 100%;
 }
@@ -20,21 +13,11 @@ body {
 .settings-tray {
     background: #eee;
     padding: 10px 15px;
-    border-radius: 7px;
 }
 .settings-tray .no-gutters {
     padding: 0;
 }
-.settings-tray--right {
-    float: right;
-}
-.settings-tray--right i {
-    margin-top: 10px;
-    font-size: 25px;
-    color: grey;
-    margin-left: 14px;
-    transition: 0.3s;
-}
+
 .settings-tray--right i:hover {
     color: #74b9ff;
     cursor: pointer;
@@ -49,7 +32,7 @@ body {
 }
 .search-box .input-wrapper i {
     color: grey;
-    margin-left: 7px;
+   
     vertical-align: middle;
 }
 input {
@@ -60,7 +43,7 @@ input {
 input::placeholder {
     color: #e3e3e3;
     font-weight: 300;
-    margin-left: 20px;
+    
 }
 input:focus {
     outline: none;
@@ -76,7 +59,7 @@ input:focus {
     background: #eee;
 }
 .friend-drawer .text {
-    margin-left: 12px;
+    
     width: 70%;
 }
 .friend-drawer .text h6 {
@@ -143,26 +126,35 @@ hr {
     color: #fff;
 }
 .chat-box-tray {
+    position: absolute; 
+   overflow: hidden; 
     background: #eee;
-    display: flex;
-    align-items: baseline;
-    padding: 10px 15px;
+    padding: 15px 15px;
     align-items: center;
     margin-top: 19px;
+    
+    position: -webkit-sticky; /* Safari */
+    position: sticky;
     bottom: 0;
+}
+
+.chat-panel{
+    height: 500px;
+    widows: 100%;
+    position: relative;
+    overflow: auto; 
 }
 .chat-box-tray input {
     margin: 0 10px;
     padding: 6px 2px;
+   
 }
 .chat-box-tray i {
     color: grey;
     font-size: 30px;
     vertical-align: middle;
 }
-.chat-box-tray i:last-of-type {
-    margin-left: 25px;
-}
+
 
 
 @media only screen and (max-width: 768px) {

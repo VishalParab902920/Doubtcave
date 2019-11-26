@@ -4,7 +4,7 @@ session_start();
 $user_id=$_SESSION['Identity'];
 $receiver_id = $_REQUEST["receiverID"];
 
-$link  = mysqli_connect('localhost','root','','id11382069_doubtcave')or die('Error connecting to MySQL server.');
+$link  = mysqli_connect('localhost','root','','doubtcave')or die('Error connecting to MySQL server.');
 
 $query="UPDATE chats 
                     SET isSolved=1 

@@ -1,7 +1,7 @@
 <?php	
 session_start();
 
-	$link  = mysqli_connect('localhost','root','','id11382069_doubtcave')or die('Error connecting to MySQL server.');
+	$link  = mysqli_connect('localhost','root','','doubtcave')or die('Error connecting to MySQL server.');
 	
 
 $searchKeyword = $whrSQL='';
