@@ -85,7 +85,7 @@
           </div>
           <div class="col-md-10">
             <div class=" settings-tray">
-            <div class="col-sm-4">
+            
                 <div class="friend-drawer no-gutters friend-drawer--grey">
                 <?php
                 $query="Select * from faculty where id=$receiver_id";
@@ -95,15 +95,15 @@
                 ?>
                 <img class="profile-image" src="<?php echo $row["photo"] ?>" alt="">
                 <div class="text">
-                </div>
+                
                 </div>
                 
                 
-                <div class="col-sm-4" >
+                
                 <a href="setDoubtSolved.php?receiverID=<?php echo $receiver_id;?>">
                 <input type="button" class="btn btn-primary" value="Done">
                 </a>
-                </div>
+                
                 
                 
               </div>

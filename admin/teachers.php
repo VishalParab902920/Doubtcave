@@ -70,9 +70,9 @@ if(mysqli_num_rows($res) > 0)
 				
                           <td><?php echo $row['password'];?></td>
                           <td><button class="btn btn-success">Edit</button></td>
-                          <a href='b.php?product=<?php echo $row['id'];?>'>
-                          <td><button class="btn btn-danger">Delete</button></td>
-                          </a>
+                          
+                          <td><a href='deleteteacher.php?del=<?php echo $row['id'];?>'><button class="btn btn-danger">Delete</button> </a></td>
+                         
                         </tr>
                         
                         <?php 

@@ -70,7 +70,7 @@ if(mysqli_num_rows($res) > 0)
 				
                           <td><?php echo $row['password'];?></td>
                           <td><button class="btn btn-success">Edit</button></td>
-                          <td><button class="btn btn-danger">Delete</button></td>
+                          <td><a href='deletestudent.php?del=<?php echo $row['id'];?>'><button class="btn btn-danger">Delete</button> </a></td>
                         </tr>
                         <?php 
 		    

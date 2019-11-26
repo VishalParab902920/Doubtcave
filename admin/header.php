@@ -62,6 +62,7 @@
                   <li><a href="students.php"><i class="fa fa-edit"></i> Student </a></li>
                   <li><a href="teachers.php"><i class="fa fa-desktop"></i> Teachers </a>
                   <li><a href="reports.php"><i class="fa fa-bar-chart"></i> Reports </a>
+                  <li><a href="insert-product.php"><i class="fa fa-bar-plus"></i> Add Records </a>
                   </li>
                  
                 </ul>
