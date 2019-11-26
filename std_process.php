@@ -1,12 +1,10 @@
 <?php
 
 session_start();
+include 'connection.php';
 
 $user_id=$_SESSION['Identity'];
 $receiver_id = $_REQUEST["receiverID"];
-
-$link  = mysqli_connect('localhost','root','','doubtcave')or die('Error connecting to MySQL server.');
-
 $query="Select * from chats where sendersId='$user_id' and receiversID='$receiver_id' or sendersId='$receiver_id' and receiversID='$user_id'" ;
 $res  = mysqli_query($link,$query)or die('Error querying database.');
 

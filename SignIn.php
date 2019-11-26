@@ -1,13 +1,13 @@
 <?php
 session_start();
+include 'connection.php';
 
  if(isset($_POST["std_submit"]))
  {
-$con = mysqli_connect('localhost','root','','doubtcave');
 $id =$_POST['std_uid'];
 $pass = $_POST['std_pass'];
 $q = "select * from student where id = '$id' and password ='$pass'";
-$result = mysqli_query($con,$q);
+$result = mysqli_query($link,$q);
 $num = mysqli_num_rows($result);
 $row=mysqli_fetch_array($result);
 if($num == 1)
@@ -25,11 +25,10 @@ else
 
 if(isset($_POST["tr_submit"]))
 {
-$con = mysqli_connect('localhost','root','','doubtcave');
 $id =$_POST['tr_uid'];
 $pass = $_POST['tr_pass'];
 $q = "select * from faculty where id = '$id' and password ='$pass'";
-$result = mysqli_query($con,$q);
+$result = mysqli_query($link,$q);
 $num = mysqli_num_rows($result);
 $row=mysqli_fetch_array($result);
 if($num == 1)

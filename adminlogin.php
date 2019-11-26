@@ -29,6 +29,8 @@
             </div>
  </form>
  <?php
+ include 'connection.php';
+ 
     if (isset($_POST['sub']));
  {
     @$username=$_POST['username'];

@@ -1,6 +1,6 @@
 <?php
     session_start();
-   
+    include 'connection.php';
 ?>
 
 <html>
@@ -55,7 +55,6 @@
                 }
                 
             
-            	$link  = mysqli_connect('localhost','root','','doubtcave')or die('Error connecting to MySQL server.');
             	$query="Select * from faculty";
             	$res  = mysqli_query($link,$query)or die('Error querying database.');
                 if(mysqli_num_rows($res) > 0)

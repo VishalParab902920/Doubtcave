@@ -1,6 +1,6 @@
 <?php
     session_start();
-   
+    include 'connection.php';
 ?>
 
 <html>
@@ -53,9 +53,7 @@
                 {
                     $receiver_id = 2019450002;
                 }
-                
-            
-            	$link  = mysqli_connect('localhost','root','','doubtcave')or die('Error connecting to MySQL server.');
+
             	$query="SELECT * FROM student WHERE id IN(SELECT DISTINCT sendersID from chats where length(sendersID)=10 
               and receiversID=$user_id
               and isSolved=0)";

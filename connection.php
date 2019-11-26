@@ -2,5 +2,5 @@
 $user='root';
 $pass='';
 $db='doubtcave';
-$link =new mysqli('localhost', $user, $pass,$db)or die("unable");
+$link = mysqli_connect('localhost', $user, $pass, $db) or die('Error connecting to MySQL server.');
 ?>

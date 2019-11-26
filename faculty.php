@@ -1,7 +1,6 @@
 <?php	
 session_start();
-
-	$link  = mysqli_connect('localhost','root','','doubtcave')or die('Error connecting to MySQL server.');
+include 'connection.php';
 	
 
 $searchKeyword = $whrSQL='';
