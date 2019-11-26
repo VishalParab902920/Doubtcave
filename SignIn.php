@@ -3,7 +3,7 @@ session_start();
 
  if(isset($_POST["std_submit"]))
  {
-$con = mysqli_connect('localhost','root','','id11382069_doubtcave');
+$con = mysqli_connect('localhost','id11382069_doubtcave','','id11382069_doubtcave');
 $id =$_POST['std_uid'];
 $pass = $_POST['std_pass'];
 $q = "select * from student where id = '$id' and password ='$pass'";
@@ -25,7 +25,7 @@ else
 
 if(isset($_POST["tr_submit"]))
 {
-$con = mysqli_connect('localhost','root','','id11382069_doubtcave');
+$con = mysqli_connect('localhost','id11382069_doubtcave','','id11382069_doubtcave');
 $id =$_POST['tr_uid'];
 $pass = $_POST['tr_pass'];
 $q = "select * from faculty where id = '$id' and password ='$pass'";
