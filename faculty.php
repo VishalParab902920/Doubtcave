@@ -1,7 +1,7 @@
 <?php	
 session_start();
 
-	$link  = mysqli_connect('localhost','root','','doubtcave')or die('Error connecting to MySQL server.');
+	$link  = mysqli_connect('localhost','root','','id11382069_doubtcave')or die('Error connecting to MySQL server.');
 	
 
 $searchKeyword = $whrSQL='';
@@ -79,7 +79,7 @@ if(mysqli_num_rows($res) > 0)
            ?>   
             
 	     <div class = "col-md-4">	
-	 		<div class="card" >
+	 		<div class="card" style="margin-bottom:25px;" >
 			<div class="card-body">
 			<form method = "post">
 				<img class="img-fluid rounded-circle w-50 mb-3" src="<?php echo $row['photo'];?>" size="300x300" alt="Card image" >
@@ -87,7 +87,7 @@ if(mysqli_num_rows($res) > 0)
 				
 					<h3 class="card-title"> <?php echo $name;?> </h3>
 					<p class="card-text"> <?php echo $description;?></p>
-					<a href="#" class="btn btn-primary">Ask questions?</a>
+					<a href="studentHome.php?receiver_id=<?php echo $row['id'];?>" class="btn btn-primary">Ask questions?</a>
 					</form>
 			</div>
 		</div>
