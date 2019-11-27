@@ -146,8 +146,6 @@ $row = mysqli_fetch_assoc($res);
                       $sql = "INSERT INTO chats (sendersID, receiversID,message) VALUES ('$user_id','$receiver_id','$msg')";
                       if(mysqli_query($link, $sql))
                       {
-                        echo "Records inserted successfully.";
-
                         $query="UPDATE chats 
                         SET isSolved=0 
                         where sendersID='$user_id' and receiversID='$receiver_id' 
@@ -171,16 +169,15 @@ $row = mysqli_fetch_assoc($res);
                     var xhttp = new XMLHttpRequest();
                     xhttp.onreadystatechange = function() 
                     {
-                      if (this.readyState == 4 && this.status == 200) 
-                      {                        
+                      var data_changed = document.getElementById("chats").innerHTML.trim().localeCompare(this.responseText.trim());
+                      if (this.readyState == 4 && this.status == 200 && this.responseText && data_changed == -1 ) 
+                      {
                         document.getElementById("chats").innerHTML = this.responseText;
                       }
                     };
                     xhttp.open("GET", "std_process.php?receiverID="+r_id, true);
                     xhttp.send();
-                    
-                    }
-
+                  }
                     var r_id="<?php echo $receiver_id?>";
                     chatRefresh(r_id);
 
