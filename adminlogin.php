@@ -6,7 +6,10 @@
 	<link href="./css/style.css" rel="stylesheet">
 	<title>Login</title>
 </head>
-<?php include 'header.php';?>
+<?php
+session_start(); 
+include 'header.php';
+?>
 
 <body id="LoginForm">
 			<div class="container padding">
