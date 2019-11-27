@@ -38,34 +38,36 @@ include '../connection.php';
                     <table id="datatable-responsive" class="table table-striped table-bordered dt-responsive nowrap" cellspacing="0" width="100%">
                       <thead>
                         <tr>
-                          <th>First name</th>
-                          <th>Last name</th>
-                          <th>Reason</th>
+                          <th>Student</th>
                           <th>Reported by</th>
-                          <th>Class</th>
-                         <th>E-mail</th>
+                          <th>Reason</th>
                         </tr>
                       </thead>
                       <tbody>
-                        <tr>
-                          <td>Shweta</td>
-                          <td>pandey</td>
-                          <td>Abusive language is used</td>
-                          <td>Sunil Sir</td>
-                         
-                          <td>Fy MCA</td>
-                          <td>t.nixon@datatables.in</td>
-                        </tr>
-                        <tr>
-                           <td>Saptak</td>
-                          <td>pandey</td>
-                          <td>Dis-respectful conversation</td>
-                          <td>Prachi Mam</td>
-                         
-                          <td>Fy EXTC</td>
-                          <td>test.app@datatables.in</td>
-                        </tr>
-                       
+                        <?php
+                        $q="Select * from reports";
+                        $res  = mysqli_query($link,$q)or die('Error querying database.');
+                        if(mysqli_num_rows($res) > 0)
+	                      {
+                          while ($row = mysqli_fetch_array($res))
+                          {
+                            $query_std="Select name from student where id=$row[student_id]";
+                            $res_std  = mysqli_query($link,$query_std)or die('Error querying database.');
+                            $row_std = mysqli_fetch_array($res_std);
+
+                            $query_tr="Select name from faculty where id=$row[faculty_id]";
+                            $res_tr  = mysqli_query($link,$query_tr)or die('Error querying database.');
+                            $row_tr = mysqli_fetch_array($res_tr);
+                            ?>
+                            <tr>
+                            <td><?php echo $row_std['name']; ?></td>
+                            <td><?php echo $row_tr['name']; ?></td>
+                            <td><?php echo $row['description']; ?></td>
+                            </tr>
+                            <?php
+                          }
+                        }
+                        ?>
                       </tbody>
                     </table>
 					

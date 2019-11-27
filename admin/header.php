@@ -34,7 +34,7 @@
         <div class="col-md-3 left_col">
           <div class="left_col scroll-view">
             <div class="navbar nav_title" style="border: 0;">
-              <a href="index.php" class="site_title"><i class="fa fa-paw"></i> <span>Admin Panel</span></a>
+              <a href="index.php" class="site_title"> <span>Admin Panel</span></a>
             </div>
 
             <div class="clearfix"></div>
@@ -42,7 +42,7 @@
             <!-- menu profile quick info -->
             <div class="profile clearfix">
               <div class="profile_pic">
-                <img src="images/img.jpg" alt="..." class="img-circle profile_img">
+                <img src="images/admin-icon.png" alt="..." class="img-circle profile_img">
               </div>
               <div class="profile_info">
                 <span>Welcome,</span>
@@ -56,13 +56,11 @@
             <!-- sidebar menu -->
             <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
               <div class="menu_section">
-                <h3>General</h3>
                 <ul class="nav side-menu">
                   <li><a href="index.php"><i class="fa fa-home"></i> Home </a></li>
                   <li><a href="students.php"><i class="fa fa-edit"></i> Student </a></li>
                   <li><a href="teachers.php"><i class="fa fa-desktop"></i> Teachers </a>
                   <li><a href="reports.php"><i class="fa fa-bar-chart"></i> Reports </a>
-                  <li><a href="insert-product.php"><i class="fa fa-bar-plus"></i> Add Records </a>
                   </li>
                  
                 </ul>
@@ -70,14 +68,7 @@
 
             </div>
             <!-- /sidebar menu -->
-
-            <!-- /menu footer buttons -->
-            <div class="sidebar-footer hidden-small">
-              <a data-toggle="tooltip" data-placement="top" title="Logout" href="#">
-                <span class="glyphicon glyphicon-off" aria-hidden="true"></span>
-              </a>
-            </div>
-            <!-- /menu footer buttons -->
+            
           </div>
         </div>
 
@@ -92,11 +83,10 @@
               <ul class="nav navbar-nav navbar-right">
                 <li class="">
                   <a href="javascript:;" class="user-profile dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-                    <img src="images/img.jpg" alt="">Admin
+                    <img src="images/admin-icon.png" alt="">Admin
                     <span class=" fa fa-angle-down"></span>
                   </a>
                   <ul class="dropdown-menu dropdown-usermenu pull-right">
-                    <li><a href="javascript:;"> Profile</a></li>
                     <li><a href="#"><i class="fa fa-sign-out pull-right"></i> Log Out</a></li>
                   </ul>
                 </li>

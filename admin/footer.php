@@ -2,7 +2,6 @@
         <!-- footer content -->
         <footer>
           <div class="pull-right">
-            Admin Panel Developed by <a href="#">Nirmit</a>
           </div>
           <div class="clearfix"></div>
         </footer>
