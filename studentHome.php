@@ -93,7 +93,7 @@
                 </div>
                 <span class="settings-tray--right">
                 <a href="setDoubtSolved.php?receiverID=<?php echo $receiver_id;?>">
-                <input type="button" value="Solved">
+                <input type="button" class="btn btn-primary" value="Solved    ">
                 </a>                
                 </span>
               </div>
@@ -101,7 +101,7 @@
             <!-- Chat  Panel -->
             <div class="chat-panel">
             <div  style="overflow-y:none;">
-                <div id="chats" style="overflow-x:auto;overflow-y:auto;">
+                <div id="chats" style="overflow-x:hidden;overflow-y:auto;">
 
                 </div>
              </div>

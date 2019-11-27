@@ -95,21 +95,19 @@
                 <div class="text">
                 
                 </div>
-                
-                
-                
+
+                <span class="settings-tray--right">
                 <a href="setDoubtSolved.php?receiverID=<?php echo $receiver_id;?>">
-                <input type="button" class="btn btn-primary" value="Done">
-                </a>
-                
-                
-                
+                <input type="button" class="btn btn-primary" value="Solved    ">
+                </a>                
+                </span>                
+               
               </div>
             </div>
             <!-- Chat  Panel -->
             <div class="chat-panel">
             <div  style="overflow-y:none;">
-                <div id="chats" style="overflow-x:auto;overflow-y:auto;">
+                <div id="chats" style="overflow-x:hidden;overflow-y:auto;">
 
                 </div>
              </div>
@@ -122,7 +120,7 @@
                 <div class="col-12">
                   <div class="chat-box-tray">
                    <form action="" method="POST">
-                   <input type="text" name="message" class="form-control" placeholder="Type your message here..."><br>
+                   <input type="text" name="message" placeholder="Type your message here...">
                    <button name="submit">
                       <i class="material-icons">send</i>
                    </button>
