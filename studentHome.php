@@ -24,36 +24,56 @@
     </script>
 </head>
 <body>
+
+<?php
+
+                
+$user_id=$_SESSION['Identity'];
+if(! empty( $_GET ))
+{
+    if(isset( $_GET['receiver_id']))
+    {
+      $receiver_id = $_GET['receiver_id'];  
+    }
+}
+else
+{
+    $receiver_id = 201901;
+}
+
+
+$q="Select * from student where id=$user_id";
+$res  = mysqli_query($link,$q)or die('Error querying database.');
+$row = mysqli_fetch_assoc($res);
+
+?>
 <div class=" container-fluid">
         <div class="row no-gutters">
           <div class="col-md-4 border-right">
-            <div class="settings-tray">
-              <img class="profile-image" src="https://filiprastovic.com/wp-content/themes/filip-rastovic/assets/img/bootstrap-chat-app-assets/filip.jpg" alt="Profile img">
+            <div class="settings-tray row">
+              <div class="col">
+              <img class="profile-image" src="$row['photo']" alt="Profile img">
               <span >
-                <?php echo $_SESSION['Name']; ?>
+                <b>
+                <?php echo $row['name']; ?>
+                </b>
               </span>
+              </div>
+              <div class="col">
+              <a href="logout.php">
+                <input type="button" class="btn btn-outline-dark" value="Logout" style="width:80px">
+              </a>
+              </div> 
             </div>
+
             <div class="search-box">
               <div class="input-wrapper">
                 <i class="material-icons">search</i>
                 <input placeholder="Search here" type="text">
               </div>
             </div>
+
             <?php
-                
-                $user_id=$_SESSION['Identity'];
-                if(! empty( $_GET ))
-                {
-                    if(isset( $_GET['receiver_id']))
-                    {
-                      $receiver_id = $_GET['receiver_id'];  
-                    }
-                }
-                else
-                {
-                    $receiver_id = 201901;
-                }
-                
             
             	$query="Select * from faculty";
             	$res  = mysqli_query($link,$query)or die('Error querying database.');
@@ -93,7 +113,7 @@
                 </div>
                 <span class="settings-tray--right">
                 <a href="setDoubtSolved.php?receiverID=<?php echo $receiver_id;?>">
-                <input type="button" class="btn btn-primary" value="Solved    ">
+                <input type="button" class="btn btn-outline-dark" value="Solved    ">
                 </a>                
                 </span>
               </div>

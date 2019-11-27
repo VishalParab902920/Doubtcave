@@ -42,6 +42,7 @@ function highlightWords($text, $word){
 <section id = "team">
 
 <div class ="container my-3 py-5 text-center">
+    <!--
     <div class = "search_my">
 		<form>
 			<input type="text" class = "Search1"  name="keyword" value="<?php echo $searchKeyword; ?>" placeholder="search....">
@@ -50,12 +51,14 @@ function highlightWords($text, $word){
             <a href="faculty.php" class= "btn btn-outline-secondary">Reset</a>
 			</form>
         </div>
-    
+    -->
  <div class = "col">
-  <h1> Our Team </h1>
-  <p style="font-size:20px;" class = "row mt-3" > Our expertise are here to solve your doubts, make sure it is worth their time and efforts. </p>
+  <h1> Faculties </h1>
+  <br>
+  <p style="font-size:20px;"> The expertise are here to solve your doubts, make sure it is worth their time and efforts. </p>
 </div>
-        
+<br>
+<br>
 		
    
 
