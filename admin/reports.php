@@ -41,6 +41,7 @@ include '../connection.php';
                           <th>Student</th>
                           <th>Reported by</th>
                           <th>Reason</th>
+                          <th>Time</th>
                         </tr>
                       </thead>
                       <tbody>
@@ -63,6 +64,7 @@ include '../connection.php';
                             <td><?php echo $row_std['name']; ?></td>
                             <td><?php echo $row_tr['name']; ?></td>
                             <td><?php echo $row['description']; ?></td>
+                            <td><?php echo $row['time']; ?></td>
                             </tr>
                             <?php
                           }
